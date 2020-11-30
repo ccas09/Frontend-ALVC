@@ -1,0 +1,13 @@
+<div class="card-group">
+    <div class="card">
+      <img class="card-img-top" src="{{news.image}}" alt="Card image cap">
+      <div class="card-body">
+        <h2 class="card-title">{{news.titleCard}}</h2>
+        <p class="card-text">{{news.body}}</p>
+        <p class="card-text"><small class="text-muted">{{news.journalist}}  |  <i class="fas fa-calendar-week"></i> {{news.date}}  |  {{news.category}}</small></p>
+        <div class="col text-right">
+            <a class = "text-warning" href="#" [routerLink]="['', news._id]" >Modificar</a>  
+        </div>
+      </div>
+    </div>
+  </div>

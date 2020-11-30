@@ -1,0 +1,29 @@
+<!-- CONTAINER -->
+<div class="container">
+
+    <!-- BUSCADOR -->
+<div class="container-fluid">
+    <div class="d-flex">
+        <div class="mr-auto">
+            <input (input)="textSearch = $event.target.value" type="text" class="form-control" name="filterSearch" placeholder="Buscar..." [(ngModel)] = "filterSearch">
+            <h5>Tu búsqueda "{{this.textSearch}}" ha arrojado el(los) siguiente(s) resultado(s):</h5>
+        </div>
+    </div>
+</div>   
+
+<!-- NOTICIAS -->
+<div class="row mt-5">
+    <div class="col-9">
+        <div *ngFor="let news of inews | paginate: { itemsPerPage: 10, currentPage: page} | filter: filterSearch">
+            <visitor-news-card [news] ="news"></visitor-news-card> 
+        </div>    
+    </div>
+</div>
+
+<!-- PAGINACIÓN -->
+<pagination-controls (pageChange)="page = $event" previousLabel= "Previo" nextLabel= "Siguiente"
+maxSize="5"></pagination-controls>
+</div>
+
+<!-- FOOTER -->
+<app-footer></app-footer>

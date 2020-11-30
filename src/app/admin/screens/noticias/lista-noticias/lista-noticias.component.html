@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row "> <!-- esto crea una fila--> 
+    <div class="col-md-2 margen" >
+      <button type="submit"  class="btn btn-success" [routerLink]="['/admin/noticias/crear']">Agregar noticia</button >
+      <div style="margin-top: 20px">
+      </div>
+    </div> 
+  </div>
+</div>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="titleCard">
+      <th mat-header-cell *matHeaderCellDef> Titulo </th>
+      <td mat-cell *matCellDef="let element"> {{element.titleCard}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> Fecha </th>
+      <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="category">
+      <th mat-header-cell *matHeaderCellDef> Categoría </th>
+      <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="journalist">
+      <th mat-header-cell *matHeaderCellDef> Periodista </th>
+      <td mat-cell *matCellDef="let element"> {{element.journalist}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Acciones </th>
+      <td mat-cell *matCellDef="let element"> 
+        <a class="text-muted" [routerLink] = "['/admin/noticias/editar/' + element._id]">Editar</a>
+        eliminar <!-- Pendiente con BD-->
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  

@@ -1,0 +1,28 @@
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6 offset-3">
+                <ng-container *ngIf="inews">
+                    <div class="container">
+                        <div class="row mt-5">
+                            <div style="align-items:center">
+                                <img src="{{inews.image}}" class="img-fluid" alt="{{inews.titleCard}}" width="500px" height="350px">
+                              </div>
+                            <div >
+                            <h6 style="color:gray">{{inews.category}}             </h6><br>
+                            </div>
+                            <p style="text-align:justify"> 
+                            <h5 style="text-align:justify" class="card-title">{{inews.titleCard}}</h5>
+                            <p  style="text-align:justify" class="card-text">{{inews.body}}</p>
+                            <p class="card-text"><small class="text-muted"> {{inews.journalist}}   |   <i class="fas fa-calendar-week"></i> {{inews.date}}   |   {{inews.category}}</small></p>
+                          </div>
+                        </div>
+                    </ng-container>
+              </div>
+            </div>
+    </div>
+    
+    <app-footer></app-footer>
+    </body>

@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+      <div class="card-deck" >
+            <div  class="col-md-4" 
+                *ngFor="let news of inews | paginate: { itemsPerPage: 5, currentPage: page}; 
+                let i = index"
+            >     
+                
+                 <periodistas-news-card [news] ="news"></periodistas-news-card>  
+
+            </div> 
+            
+        </div>
+    </div>
+</div>
+
+
+  <!-- PAGINATION -->
+  <div class="container">
+    <div class="row">
+      <div class="col sm-6">
+        <pagination-controls (pageChange)="page = $event" previousLabel= "Previo" nextLabel= "Siguiente"
+        maxSize="5"></pagination-controls>
+      </div>
+    </div>
+  </div>

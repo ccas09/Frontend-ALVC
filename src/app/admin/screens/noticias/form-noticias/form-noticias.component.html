@@ -1,0 +1,85 @@
+<form class="example-form" (ngSubmit)="enviar($event)" [formGroup]= "form" >
+    
+    <div class="form-group w-50">
+        <label for="exampleFormControlInput1">Titulo de la noticia</label>
+        <input type="text" formControlName="titleCard" class="form-control" id="exampleFormControlInput1" placeholder="Título">
+    </div>
+
+    <div *ngIf="form.controls['titleCard'].invalid && (form.controls['titleCard'].dirty || form.controls['titleCard'].touched)" class="alert alert-danger">
+        <div *ngIf="form.controls['titleCard'].errors.required">
+            El titulo de la noticia es obligatorio.
+          </div>
+    </div>
+
+    <div class="form-group w-50">
+        <label for="exampleFormControlInput1">Cuerpo de la noticia</label>
+        <input type="text" formControlName="body" class="form-control" id="exampleFormControlInput1" placeholder="Cuerpo de la noticia">
+    </div>
+
+    <div *ngIf="form.controls['body'].invalid && (form.controls['body'].dirty || form.controls['body'].touched)" class="alert alert-danger">
+        <div *ngIf="form.controls['body'].errors.required">
+            El cuerpo de la noticia es obligatorio.
+          </div>
+    </div>
+    
+    <div class="form-group w-50">
+        <label for="exampleFormControlInput1">Cargar una imagen</label>
+        <input type="text" formControlName="image" class="form-control" id="exampleFormControlInput1" placeholder="imagen">
+    </div>
+
+    <div *ngIf="form.controls['image'].invalid && (form.controls['image'].dirty || form.controls['image'].touched)" class="alert alert-danger">
+        <div *ngIf="form.controls['image'].errors.required">
+            Subir una imagen es obligatorio.
+          </div>
+    </div>
+
+    <div class="form-group w-50">
+        <label for="exampleFormControlInput1">Fecha de publicación</label>
+        <input type="text" formControlName="date" class="form-control" id="exampleFormControlInput1" placeholder="Fecha de publicación">
+    </div>
+
+    <div *ngIf="form.controls['date'].invalid && (form.controls['date'].dirty || form.controls['date'].touched)" class="alert alert-danger">
+        <div *ngIf="form.controls['date'].errors.required">
+            La fecha es obligatoria.
+          </div>
+    </div>
+
+    <div class="form-group w-50">
+        <label for="exampleFormControlInput1">Periodista</label>
+        <input type="text" formControlName="journalist" class="form-control" id="exampleFormControlInput1" placeholder="Nombre del periodista">
+    </div>
+
+    <div *ngIf="form.controls['journalist'].invalid && (form.controls['journalist'].dirty || form.controls['journalist'].touched)" class="alert alert-danger">
+        <div *ngIf="form.controls['journalist'].errors.required">
+            El periodista es obligatorio.
+          </div>
+    </div>
+    
+    <div class="form-group w-50">
+        <label for="exampleFormControlInput1">Categoria</label>
+        <input type="text" formControlName="category" class="form-control" id="exampleFormControlInput1" placeholder="Ingresar la categoria">
+    </div>
+
+    <div *ngIf="form.controls['category'].invalid && (form.controls['category'].dirty || form.controls['category'].touched)" class="alert alert-danger">
+        <div *ngIf="form.controls['category'].errors.required">
+            La catogoría es obligatorio.
+          </div>
+    </div>
+    
+        
+   <button type="submit">Enviar</button>
+        
+<!--     <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput name="titleCard" formControlName="titleCard">
+    </mat-form-field>
+    <br>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Contenido</mat-label>
+        <textarea matInput name="body" formControlName="body"></textarea>
+    </mat-form-field>
+-->   
+</form>
+
+
